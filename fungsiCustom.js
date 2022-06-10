@@ -47,7 +47,6 @@ const bacaData = (fnCallback) => {
     });
   });
 };
-console.log(bacaData());
 
 // ! JANGAN DIMODIFIKASI
 module.exports = {
