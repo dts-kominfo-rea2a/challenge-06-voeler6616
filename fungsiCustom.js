@@ -38,17 +38,17 @@ const bacaData = (fnCallback) => {
   // Cara Lain
   const wordResults = [];
   fs.readFile(file1, "utf-8", (err, data1) => {
-    if (err) throw fnCallback(err);
+    if (err) throw fnCallback(err, null);
     return data1;
   });
 
   fs.readFile(file2, "utf-8", (err, data2) => {
-    if (err) throw fnCallback(err);
+    if (err) throw fnCallback(err, null);
     return data2;
   });
 
   fs.readFile(file3, "utf-8", (err, data3) => {
-    if (err) throw fnCallback(err);
+    if (err) throw fnCallback(err, null);
     return data3;
   });
     
@@ -66,7 +66,6 @@ const bacaData = (fnCallback) => {
     // console.log(wordResults);
     fnCallback(null, wordResults);
 };
-console.log(bacaData);
 
 // ! JANGAN DIMODIFIKASI
 module.exports = {
