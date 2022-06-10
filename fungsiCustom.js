@@ -27,7 +27,7 @@ const bacaData = (fnCallback) => {
     fs.readFile(file2, "utf-8", ( err, data2 ) => {
       if ( err ) throw fnCallback( err, null );
 
-      fs.read(file3, "utf-8", ( err, data3 ) => {
+      fs.readFile(file3, "utf-8", ( err, data3 ) => {
         if ( err ) throw fnCallback( err, null );
 
         const word1 = JSON.parse(data1).message.split(' ');
@@ -43,8 +43,8 @@ const bacaData = (fnCallback) => {
         }
 
         fnCallback(null, wordResults);
-      })
-    })
+      });
+    });
   });
 };
 console.log(bacaData());
