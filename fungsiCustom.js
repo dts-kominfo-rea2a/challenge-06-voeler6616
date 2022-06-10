@@ -21,14 +21,15 @@ let modifyFile3 = (val) => {
 // gunakan variabel file1, file2, dan file3
 const bacaData = (fnCallback) => {
   const wordResults = [];
+
   fs.readFile(file1, "utf-8", (err, data1) => {
-    if (err) throw fnCallback(err, null);
+    if (err) throw fnCallback('Error 1' + err, null);
 
     fs.readFile(file2, "utf-8", ( err, data2 ) => {
-      if ( err ) throw fnCallback( err, null );
+      if ( err ) throw fnCallback('Error 2' + err, null );
 
       fs.readFile(file3, "utf-8", ( err, data3 ) => {
-        if ( err ) throw fnCallback( err, null );
+        if ( err ) throw fnCallback('Error 3' + err, null );
 
         const word1 = JSON.parse(data1).message.split(' ');
         const word2 = JSON.parse(data2)[0].message.split(' ');
